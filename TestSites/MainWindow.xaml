@@ -1,5 +1,9 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="TestSites">
-    Hello World!
+        Title="TestSites" Height="500" Width="600">
+  <Grid DataContext="{StaticResource nexusPhone}">
+    <TextBox Name="tb" x:Name="text" Margin="24.5,54,29.5,26"  AcceptsReturn="true" TextWrapping="Wrap"  Text="{Binding Path=Name, Mode=TwoWay}" />
+      <Button Content="Start" HorizontalAlignment="Left" Margin="24.5,7.04,0,0" Command="{Binding ButtonClicked}"  VerticalAlignment="Top"   Width="75" Cursor="Hand"/>
+    <TextBlock Text="{Binding Path=Name2, Mode=TwoWay}" HorizontalAlignment="Right" Margin="24.5,10,0,0" VerticalAlignment="Top" Width="300" ScrollViewer.VerticalScrollBarVisibility="Visible"></TextBlock>
+    </Grid> 
 </Window>

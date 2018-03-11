@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using System;
 
 namespace TestSites
 {
@@ -9,6 +10,8 @@ namespace TestSites
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new ViewModel() { Name = "", Name2 = "Программа запустилась"}; 
+            
 #if DEBUG
             this.AttachDevTools();
 #endif
@@ -16,7 +19,8 @@ namespace TestSites
 
         private void InitializeComponent()
         {
-            AvaloniaXamlLoader.Load(this);
-        }
+            AvaloniaXamlLoaderPortableXaml.Load(this);
+             
+        } 
     }
 }
